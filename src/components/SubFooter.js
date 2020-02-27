@@ -23,7 +23,7 @@ const SubFooter = props => (
             <ul>
               <li>
                 <a href={props.data.site.siteMetadata.contact.facebook}>
-                  <FontAwesomeIcon icon={["fab", "facebook"]} style={{height: "3em"}}  />
+                  <FontAwesomeIcon icon={["fab", "facebook"]} style={{fontSize: "2em"}}  />
                 </a>
               </li>
             </ul>
