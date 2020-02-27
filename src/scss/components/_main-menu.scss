@@ -27,11 +27,11 @@
         font-size: 0.9rem;
         font-weight: 400;
         text-transform: uppercase;
-        color: #fff;
+        color: $white;
         padding: 10px 14px 10px 14px;
         text-decoration: none;
         &:hover {
-          background: $primary;
+          background: $link-color-alt;
           color: #fff;
           text-decoration: none;
         }
@@ -44,7 +44,7 @@
         color: #fff;
         &:hover {
           text-decoration: none;
-          background: $primary;
+          background: $link-color-alt;
           transition: all 225ms ease-in 0s;
           color: #fff;
         }
