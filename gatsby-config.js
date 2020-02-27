@@ -2,11 +2,11 @@ const guid = process.env.NETLIFY_GOOGLE_ANALYTICS_ID;
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Serif',
+    title: 'Alamo Post 2',
     description: 'my theme',
     contact: {
-      phone: 'XXX XXX XXX',
-      email: 'zerostaticthemes@gmail.com',
+      phone: '210.732.1891',
+      email: 'info@alamopost2.org',
     },
     menuLinks: [
       {
@@ -25,6 +25,10 @@ module.exports = {
         name: 'Contact',
         link: '/contact',
       },
+      {
+        name: 'Hello',
+        link: '/hello',
+      }
     ],
   },
   plugins: [

@@ -70,7 +70,7 @@ const Team = (props) => {
 };
 
 export const query = graphql`
-  query TeamQuery {
+  query teamQueryAndTeamQuery {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/team/" } }
       sort: { fields: [frontmatter___date], order: DESC }
