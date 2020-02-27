@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const SubFooter = props => (
   <div className="sub-footer-strip">
@@ -14,7 +15,6 @@ const SubFooter = props => (
               </li>
               <li>
                 <strong>Email: </strong>
-{' '}
                 <a href={`mailto:${props.data.site.siteMetadata.contact.email}`}>
                   {props.data.site.siteMetadata.contact.email}
                 </a>
@@ -22,7 +22,9 @@ const SubFooter = props => (
             </ul>
             <ul>
               <li>
-                <a href="https://www.zerostatic.io">www.zerostatic.io</a>
+                <a href={props.data.site.siteMetadata.contact.facebook}>
+                  <FontAwesomeIcon icon={["fab", "facebook"]} style={{height: "3em"}}  />
+                </a>
               </li>
             </ul>
           </div>
@@ -41,6 +43,7 @@ export default props => (
             contact {
               email
               phone
+              facebook
             }
           }
         }

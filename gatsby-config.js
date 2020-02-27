@@ -7,6 +7,7 @@ module.exports = {
     contact: {
       phone: '210 732 1891',
       email: 'info@alamopost2.org',
+      facebook: 'https://www.facebook.com/alamopost2',     
     },
     menuLinks: [
       {

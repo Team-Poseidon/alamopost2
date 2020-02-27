@@ -4,14 +4,12 @@
   padding-bottom: 20px;
 }
 .footer {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: flex-start;
+  display: grid;
+  justify-items: stretch;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
   @include media-breakpoint-up(sm) {
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
+    justify-items: space-between;
   }
   .footer-title {
     color: #ffffff;

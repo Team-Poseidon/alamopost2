@@ -3,8 +3,11 @@ import SEO from '../components/SEO'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import SubFooter from '../components/SubFooter'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 import '../scss/style.scss'
 
+library.add(fab)
 const Layout = props => {
   return (
     <React.Fragment>
