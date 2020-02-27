@@ -2,11 +2,11 @@ const guid = process.env.NETLIFY_GOOGLE_ANALYTICS_ID;
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Serif',
-    description: 'my theme',
+    title: 'Alamo Post 2 | American Legion',
+    description: 'Non profit veteran organization',
     contact: {
-      phone: 'XXX XXX XXX',
-      email: 'zerostaticthemes@gmail.com',
+      phone: '210 732 1891',
+      email: 'info@alamopost2.org',
     },
     menuLinks: [
       {
