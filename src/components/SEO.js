@@ -8,12 +8,7 @@ const SEO = (props) => ( <
     render = {
         (data) => {
             const title = props.title || data.site.siteMetadata.title;
-            return ( <
-                Helmet htmlAttributes = {
-                    {
-                        lang: 'en',
-                    }
-                }
+            return ( <Helmet htmlAttributes = {{lang: 'en',}}
                 title = { title }
                 titleTemplate = { `%s - ${data.site.siteMetadata.title}` }
                 link = {
