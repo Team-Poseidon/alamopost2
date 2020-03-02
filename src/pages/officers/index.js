@@ -3,19 +3,18 @@ import { graphql } from 'gatsby';
 import SEO from '../../components/SEO';
 import Layout from '../../layouts/index';
 
-const Team = (props) => {
+const Officers = (props) => {
   const teams = props.data.allMarkdownRemark.edges;
   return (
     <Layout bodyClass="page-teams">
-      <SEO title="Team" />
+      <SEO title="Officers" />
       <div className="intro">
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h1>Meet The Team</h1>
+              <h1>Meet The Officers</h1>
               <p>
-                Our team of qualified accountants and financial consultants can help your business
-                at any stage of it’s growth.
+                Meet the elected officers who guide the post in a positive light.
               </p>
             </div>
           </div>
@@ -40,18 +39,18 @@ const Team = (props) => {
                     )}
                   </div>
                   <div className="card-right">
-                    <h2 className="card-title">{edge.node.frontmatter.title}</h2>
+                    <h2 className="card-title">{edge.node.frontmatter.officerName}</h2>
                     <ul className="card-meta">
                       <li>
                         <strong>{edge.node.frontmatter.jobtitle}</strong>
                       </li>
                       <li>
+                        <a href={edge.node.frontmatter.email}>{edge.node.frontmatter.email}</a>
+                      </li>
+                      <li>
                         <a target="_blank" href={edge.node.frontmatter.linkedinurl}>
                           {edge.node.frontmatter.linkedinurl}
                         </a>
-                      </li>
-                      <li>
-                        <a href={edge.node.frontmatter.email}>{edge.node.frontmatter.email}</a>
                       </li>
                     </ul>
                   </div>
@@ -72,14 +71,14 @@ const Team = (props) => {
 export const query = graphql`
   query teamQueryAndTeamQuery {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/team/" } }
+      filter: { fileAbsolutePath: { regex: "/officers/" } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
           html
           frontmatter {
-            title
+            officerName
             path
             image
             jobtitle
@@ -92,4 +91,4 @@ export const query = graphql`
   }
 `;
 
-export default Team;
+export default Officers;

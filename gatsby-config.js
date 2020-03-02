@@ -15,8 +15,8 @@ module.exports = {
         link: '/services',
       },
       {
-        name: 'Team',
-        link: '/team',
+        name: 'Officers',
+        link: '/officers',
       },
       {
         name: 'Testimonials',
