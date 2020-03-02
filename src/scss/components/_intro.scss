@@ -2,8 +2,8 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 200px;
-  padding-bottom: 100px;
+  padding-top: 20px;
+  padding-bottom: 10px;
   @include media-breakpoint-up(sm) {
     padding-top: 160px;
     padding-bottom: 80px;
@@ -13,8 +13,8 @@
     padding-bottom: 80px;
   }
   @include media-breakpoint-up(lg) {
-    padding-top: 200px;
-    padding-bottom: 100px;
+    padding-top: 20px;
+    padding-bottom: 50px;
   }
   h1 {
     color: $primary;

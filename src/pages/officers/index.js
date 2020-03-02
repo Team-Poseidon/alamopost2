@@ -8,7 +8,6 @@ const Officers = (props) => {
   return (
     <Layout bodyClass="page-teams">
       <SEO title="Officers" />
-      <div className="intro">
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -19,13 +18,11 @@ const Officers = (props) => {
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="container pb-6">
-        <div className="row">
+        <div className="container pb6 cards-container">
           {teams.map(edge => (
-            <div key={edge.node.frontmatter.path} className="col-12 col-md-6 mb-1">
-              <div className="team card-two">
+            <div key={edge.node.frontmatter.path} className="card mw5 center bg-white pa3 pa4-ns mv3">
+              <div className="card-two">
                 <div className="card-header">
                   <div className="card-header-left">
                     {edge.node.frontmatter.image && (
@@ -63,7 +60,6 @@ const Officers = (props) => {
             </div>
           ))}
         </div>
-      </div>
     </Layout>
   );
 };

@@ -25,7 +25,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
             team: allMarkdownRemark(
-              filter: { fileAbsolutePath: { regex: "/team/" } }
+              filter: { fileAbsolutePath: { regex: "/officers/" } }
               sort: { fields: [frontmatter___date], order: DESC }
             ) {
               edges {
