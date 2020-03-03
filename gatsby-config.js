@@ -19,17 +19,13 @@ module.exports = {
         link: '/officers',
       },
       {
-        name: 'Testimonials',
-        link: '/testimonials',
+        name: 'Rentals',
+        link: '/rentals',
       },
       {
         name: 'Contact',
         link: '/contact',
       },
-      {
-        name: 'Hello',
-        link: '/hello',
-      }
     ],
   },
   plugins: [
