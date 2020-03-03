@@ -21,18 +21,15 @@ const Officers = (props) => {
 
         <div className="container pb6 cards-container">
           {teams.map(edge => (
-            <div key={edge.node.frontmatter.path} className="card mw5 center bg-white pa3 pa4-ns mv3">
-              <div className="card-two">
+            <div key={edge.node.frontmatter.path} className="card ma2 bg-white pa3">
                 <div className="card-header">
                   <div className="card-header-left">
                     {edge.node.frontmatter.image && (
-                      <div className="card-image">
                         <img
                           alt={edge.node.frontmatter.title}
-                          className="img-fluid mb-2"
+                          class="br4 dib ma2"
                           src={edge.node.frontmatter.image}
                         />
-                      </div>
                     )}
                   </div>
                   <div className="card-right">
@@ -53,11 +50,10 @@ const Officers = (props) => {
                   </div>
                 </div>
                 <div
-                  className="team-content"
+                  className="card-content"
                   dangerouslySetInnerHTML={{ __html: edge.node.html }}
                 />
               </div>
-            </div>
           ))}
         </div>
     </Layout>
@@ -65,26 +61,27 @@ const Officers = (props) => {
 };
 
 export const query = graphql`
-  query teamQueryAndTeamQuery {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/officers/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          html
-          frontmatter {
-            officerName
-            path
-            image
-            jobtitle
-            linkedinurl
-            email
-          }
+query teamQueryAndTeamQuery {
+  allMarkdownRemark(
+    filter: { fileAbsolutePath: {regex: "/officers/"} },
+    sort: { fields: [frontmatter___weight], order: ASC }
+  ) {
+    edges {
+      node {
+        html
+        frontmatter {
+          officerName
+          path
+          image
+          jobtitle
+          linkedinurl
+          email
+          weight
         }
       }
     }
   }
+}
 `;
 
 export default Officers;
