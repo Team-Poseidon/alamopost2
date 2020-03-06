@@ -27,6 +27,50 @@ module.exports = {
         link: '/contact',
       },
     ],
+    hoursOfOperation:[
+        {
+            day: 'Monday',
+            opensAt: '8:30AM',
+            closesAt: '5:00PM',
+            isHoliday: false,
+        },
+        {
+            day: 'Tuesday',
+            opensAt: '8:30AM',
+            closesAt: '5:00PM',
+            isHoliday: false
+        },
+        {
+            day: 'Wednesday',
+            opensAt: '8:30AM',
+            closesAt: '5:00PM',
+            isHoliday: false
+        },
+        {
+            day: 'Thursday',
+            opensAt: '8:30AM',
+            closesAt: '5:00PM',
+            isHoliday: false
+        },
+        {
+            day: 'Friday',
+            opensAt: '8:30AM',
+            closesAt: '5:00PM',
+            isHoliday: false
+        },
+        {
+            day: 'Saturday',
+            opensAt: '8:30AM',
+            closesAt: '5:00PM',
+            isHoliday: false
+        },
+        {
+            day: 'Sunday',
+            opensAt: '8:30AM',
+            closesAt: '5:00PM',
+            isHoliday: false
+        },
+    ],
   },
   plugins: [
     'gatsby-plugin-sass',
