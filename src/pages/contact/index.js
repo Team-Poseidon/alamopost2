@@ -1,18 +1,19 @@
 import React from 'react';
+import banner from '../../images/banners/legion_family_emblem.jpg';
 import SEO from '../../components/SEO';
 import Layout from '../../layouts/index';
-import Call from '../../components/Call';
 import BusinessHours from '../../components/BusinessHours';
 import HeroImage from '../../components/HeroImage';
 
 const Contact = props => (
+  
   <Layout bodyClass="page-contact">
     <SEO title="Contact" />
     <div className="container">
       <div className="row pv2">
         <div className="col-12">
           <p className="f2 db tc">Contact Alamo Post 2</p>
-          <HeroImage />
+          <HeroImage source={banner} altName="legion family banner" />
         </div>
       </div>
     </div>

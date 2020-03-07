@@ -4,6 +4,8 @@ import Helmet from 'react-helmet';
 import SEO from '../components/SEO';
 import Layout from '../layouts/index';
 import Call from '../components/Call';
+import HeroImage from '../components/HeroImage';
+import banner from '../images/banners/legion-banner.jpg';
 
 const Home = (props) => {
   const markdown = props.data.allMarkdownRemark.edges;
@@ -17,13 +19,10 @@ const Home = (props) => {
           content="Small Business Theme. Multiple content types using Markdown and JSON sources. Responsive design and SCSS. This is a beautiful and artfully designed starting theme."
         />
       </Helmet>
+      <HeroImage source={banner} altName="American legion banner" />
       <div className="intro pb-4">
         <div className="container">
-          <h1>Serif - Gatsby Small Business Theme.</h1>
-          <p>
-            Multiple content types using Markdown and JSON sources. Responsive design and SCSS. This
-            is a beautiful and artfully designed starting theme.
-          </p>
+          <h1>Alamo Post 2</h1>
         </div>
       </div>
 
