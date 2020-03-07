@@ -4,14 +4,12 @@ import Helmet from 'react-helmet';
 import SEO from '../components/SEO';
 import Layout from '../layouts/index';
 import Call from '../components/Call';
-import HeroImage from '../components/HeroImage';
-import banner from '../images/banners/legion-banner.jpg';
 
 const Home = (props) => {
   const markdown = props.data.allMarkdownRemark.edges;
   const json = props.data.allFeaturesJson.edges;
   return (
-    <Layout bodyClass="page-home">
+    <Layout>
       <SEO title="Home" />
       <Helmet>
         <meta
@@ -19,10 +17,17 @@ const Home = (props) => {
           content="Small Business Theme. Multiple content types using Markdown and JSON sources. Responsive design and SCSS. This is a beautiful and artfully designed starting theme."
         />
       </Helmet>
-      <HeroImage source={banner} altName="American legion banner" />
-      <div className="intro pb-4">
+
+      <div className="container">
+        <div className="row">
+          <div className="page-home">
+          <p className="f2 white">Alamo Post 2</p>
+          </div>
+        </div>
+      </div>
+      <div className="pb4">
         <div className="container">
-          <h1>Alamo Post 2</h1>
+          
         </div>
       </div>
 
@@ -47,11 +52,6 @@ const Home = (props) => {
               </div>
             </div>
           ))}
-          <div className="col-12 text-center">
-            <Link className="button button-primary mt-2" to="/services">
-              View All Services
-            </Link>
-          </div>
         </div>
       </div>
 

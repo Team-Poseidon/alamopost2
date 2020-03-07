@@ -13,7 +13,7 @@ const Contact = props => (
       <div className="row pv2">
         <div className="col-12">
           <p className="f2 db tc">Contact Alamo Post 2</p>
-          <HeroImage source={banner} altName="legion family banner" />
+          <HeroImage source={banner} className="w-100 dib measure f3" altName="legion family banner" />
         </div>
       </div>
     </div>
