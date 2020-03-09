@@ -4,6 +4,8 @@ import Helmet from 'react-helmet';
 import SEO from '../components/SEO';
 import Layout from '../layouts/index';
 import Call from '../components/Call';
+import HeroImage from '../components/HeroImage';
+import banner from '../images/banners/legion-banner.jpg';
 
 const Home = (props) => {
   const markdown = props.data.allMarkdownRemark.edges;
@@ -21,13 +23,11 @@ const Home = (props) => {
       <div className="container">
         <div className="row">
           <div className="page-home">
-          <p className="f2 white">Alamo Post 2</p>
+          <p className="f2 blue pv2 tc">Alamo Post 2</p>
+          <div className="banner">
+            <HeroImage source={banner} altName="Legion banner" className="pa2" />
           </div>
-        </div>
-      </div>
-      <div className="pb4">
-        <div className="container">
-          
+          </div>
         </div>
       </div>
 
