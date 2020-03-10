@@ -6,9 +6,9 @@ import Layout from '../layouts/index';
 import Call from '../components/Call';
 import HeroImage from '../components/HeroImage';
 import banner from '../images/banners/legion-banner.jpg';
+import Services from '../components/Services';
 
 const Home = (props) => {
-  const markdown = props.data.allMarkdownRemark.edges;
   const json = props.data.allFeaturesJson.edges;
   return (
     <Layout>
@@ -35,31 +35,21 @@ const Home = (props) => {
         <Call button />
       </div>
 
-      <div className="container pt-8 pt-md-10">
+      <div className="container pt-8 pt-md-10 ">
         <div className="row justify-content-start">
           <div className="col-12">
-            <h2 className="title-3 text-dark mb-3">Our Services</h2>
+            <h2 className="title-3 mb-3 tc gold">Alamo Post 2 Services</h2>
           </div>
-          {markdown.map(edge => (
-            <div key={edge.node.frontmatter.path} className="col-12 col-md-4 mb-1">
-              <div className="card service service-teaser">
-                <div className="card-content">
-                  <h2>
-                    <Link to={edge.node.frontmatter.path}>{edge.node.frontmatter.title}</Link>
-                  </h2>
-                  <p>{edge.node.excerpt}</p>
-                </div>
-              </div>
-            </div>
-          ))}
+          <Services data={query} />
         </div>
       </div>
 
       <div className="container pt-5 pb-5 pt-md-7 pb-md-7">
         <div className="row justify-content-center">
           <div className="col-12">
-            <h2 className="title-3 text-dark mb-4">Our Features</h2>
+            <h2 className="title-3 mb-4 tc gold">Alamo Post 2 Groups</h2>
           </div>
+
           {json.map(edge => (
             <div key={edge.node.id} className="col-12 col-md-6 col-lg-4 mb-2">
               <div className="feature">
@@ -81,22 +71,6 @@ const Home = (props) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/services/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            path
-            title
-            date(formatString: "DD MMMM YYYY")
-          }
-          excerpt
-        }
-      }
-    }
     allFeaturesJson {
       edges {
         node {
