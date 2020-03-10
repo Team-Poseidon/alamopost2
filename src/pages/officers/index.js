@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import SEO from '../../components/SEO';
 import Layout from '../../layouts/index';
 
@@ -25,15 +25,18 @@ const Officers = (props) => {
                 <div className="card-header">
                   <div className="card-header-left">
                     {edge.node.frontmatter.image && (
+                        <Link to={edge.node.frontmatter.path}>
+
                         <img
                           alt={edge.node.frontmatter.title}
                           class="br4 dib ma2"
                           src={edge.node.frontmatter.image}
-                        />
+                          />
+                          </Link>
                     )}
                   </div>
                   <div className="card-right">
-                    <h2 className="card-title">{edge.node.frontmatter.officerName}</h2>
+                    <h2 className="card-title black">{edge.node.frontmatter.officerName}</h2>
                     <ul className="card-meta">
                       <li>
                         <strong>{edge.node.frontmatter.jobtitle}</strong>
@@ -50,10 +53,10 @@ const Officers = (props) => {
                   </div>
                 </div>
                 <div
-                  className="card-content"
+                  className="card-content black"
                   dangerouslySetInnerHTML={{ __html: edge.node.html }}
                 />
-              </div>
+            </div>
           ))}
         </div>
     </Layout>

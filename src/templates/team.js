@@ -7,7 +7,7 @@ const Team = ({ data }) => {
   const { html } = data.markdownRemark;
   return (
     <Layout bodyClass="page-team">
-      <div className="strip strip-white strip-diagonal">
+      <div className="strip strip-white">
         <div className="container pt-4 pt-md-10">
           <div className="row justify-content-start">
             <div className="col-12 col-md-8">
