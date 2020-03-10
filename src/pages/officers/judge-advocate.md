@@ -1,9 +1,9 @@
 ---
-path: '/team/judge-advocate'
+path: '/officers/judge-advocate'
 officerName: 'Vacant'
 date: 2018-11-19T10:47:58+10:00
 draft: false
-image: '/team/al-default.jpg'
+image: '/officers/al-default.jpg'
 jobtitle: 'Judge Advocate'
 email: 'jag@alamopost2.org'
 linkedinurl: 'www.linkedin.com/pvanijk'
