@@ -8,54 +8,45 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           query {
-            services: allMarkdownRemark(
-              filter: { fileAbsolutePath: { regex: "/services/" } }
-              sort: { fields: [frontmatter___date], order: DESC }
-            ) {
-              edges {
-                node {
-                  id
-                  frontmatter {
-                    path
-                    title
-                    date(formatString: "DD MMMM YYYY")
+            services: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/services/"}}, sort: {fields: [frontmatter___date], order: DESC}) {
+                edges {
+                  node {
+                    id
+                    frontmatter {
+                      path
+                      title
+                      date(formatString: "DD MMMM YYYY")
+                    }
+                    excerpt
                   }
-                  excerpt
                 }
               }
-            }
-            team: allMarkdownRemark(
-              filter: { fileAbsolutePath: { regex: "/officers/" } }
-              sort: { fields: [frontmatter___date], order: DESC }
-            ) {
-              edges {
-                node {
-                  id
-                  frontmatter {
-                    path
-                    title
-                    date(formatString: "DD MMMM YYYY")
+              officers: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/officers/"}}, sort: {fields: [frontmatter___date], order: DESC}) {
+                edges {
+                  node {
+                    id
+                    frontmatter {
+                      path
+                      title
+                      date(formatString: "DD MMMM YYYY")
+                    }
+                    excerpt
                   }
-                  excerpt
                 }
               }
-            }
-            testimonials: allMarkdownRemark(
-              filter: { fileAbsolutePath: { regex: "/testimonials/" } }
-              sort: { fields: [frontmatter___date], order: DESC }
-            ) {
-              edges {
-                node {
-                  id
-                  frontmatter {
-                    path
-                    title
-                    date(formatString: "DD MMMM YYYY")
+              rentals: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/rentals/"}}, sort: {fields: [frontmatter___date], order: DESC}) {
+                edges {
+                  node {
+                    id
+                    frontmatter {
+                      path
+                      title
+                      date(formatString: "DD MMMM YYYY")
+                    }
+                    excerpt
                   }
-                  excerpt
                 }
               }
-            }
           }
         `,
       ).then((result) => {
@@ -69,8 +60,8 @@ exports.createPages = ({ graphql, actions }) => {
             },
           });
         });
-        result.data.team.edges.forEach(({ node }) => {
-          const component = path.resolve('src/templates/team.js');
+        result.data.officers.edges.forEach(({ node }) => {
+          const component = path.resolve('src/templates/officer.js');
           createPage({
             path: node.frontmatter.path,
             component,
@@ -79,8 +70,8 @@ exports.createPages = ({ graphql, actions }) => {
             },
           });
         });
-        result.data.testimonials.edges.forEach(({ node }) => {
-          const component = path.resolve('src/templates/testimonial.js');
+        result.data.rentals.edges.forEach(({ node }) => {
+          const component = path.resolve('src/templates/rental.js');
           createPage({
             path: node.frontmatter.path,
             component,

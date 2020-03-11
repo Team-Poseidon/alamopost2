@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import SEO from '../../components/SEO';
 import Layout from '../../layouts/index';
 
@@ -23,12 +23,14 @@ const Rentals = (props) => {
           {testimonials.map(edge => (
             
             <div key={edge.node.frontmatter.path} className="col-12 col-md-6 mb-1">
-              <div className="br2 ba dark-gray b--black-10 mv4 w-100 w-50-m w-45-l mw5 center">
-                <img 
-                  src={edge.node.frontmatter.image}
-                  className="db w-100 br2 br--top"
-                  alt="Photo of a kitten looking menacing."
-                />
+              <div className="br2 ba dark-gray b--black-10 mv4 card-lg">
+                <Link to={edge.node.frontmatter.path}>
+                    <img 
+                    src={edge.node.frontmatter.image}
+                    className="db br2 br--top"
+                    alt="Photo of a kitten looking menacing."
+                    />
+                </Link>
                 <div className="pa2 ph3-ns pb3-ns">
                   <div className="dt w-100 mt1">
                     <div className="dtc">
