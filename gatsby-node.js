@@ -47,6 +47,19 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                 }
               }
+              blogposts: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/blogposts/"}}, sort: {order: ASC }) {
+                edges {
+                  node {
+                    html
+                    frontmatter {
+                      path
+                      date(locale: "en-US")
+                      category
+                      title
+                    }
+                  }
+                }
+              }
           }
         `,
       ).then((result) => {
@@ -80,6 +93,16 @@ exports.createPages = ({ graphql, actions }) => {
             },
           });
         });
+        result.data.blogposts.edges.forEach(({ node }) => {
+            const component = path.resolve('src/templates/blogpost.js');
+            createPage({
+              path: node.frontmatter.path,
+              component,
+              context: {
+                id: node.id,
+              },
+            });
+          });
         resolve();
       }),
     );

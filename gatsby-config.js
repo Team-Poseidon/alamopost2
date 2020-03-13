@@ -11,6 +11,10 @@ module.exports = {
     },
     menuLinks: [
       {
+        name: 'News',
+        link: '/blogposts',
+      },
+      {
         name: 'Services',
         link: '/services',
       },
