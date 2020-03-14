@@ -54,6 +54,9 @@ typings/
 # dotenv environment variables file
 .env
 
+# firestore key file
+firebase-key.json
+
 # gatsby files
 .cache/
 public
